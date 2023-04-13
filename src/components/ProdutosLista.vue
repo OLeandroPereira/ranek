@@ -20,15 +20,15 @@ export default {
   },
   methods: {
     getProdutos() {
-      axios.get ("http://localhost:3000/produto").then(response => {
+      axios.get("http://localhost:3000/produto").then(response => {
         this.produtos = response.data;
         });
 
-      fetch("http://localhost:3000/produto")
-       .then(response => response.json())
-        .then(response => {
-          this.produtos = response;
-        });
+     fetch("http://localhost:3000/produto")
+      .then(response => response.json())
+       .then(response => {
+         this.produtos = response;
+       });
     }
   },
   created() {
