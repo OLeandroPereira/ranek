@@ -3,28 +3,28 @@
     <div v-for="produto in produtos" :key="produto.id">
       <img v-if="produto.fotos" :src="produto.fotos[0].src" :alt="produto.fotos[0].titulo">
       <p class="preco">{{ produto.preco }}</p>
-      <p class="titulo">{{ produto.nome }}</p>
+      <h2 class="titulo">{{ produto.nome }}</h2>
       <p>{{ produto.descricao }}</p>
     </div>
   </section>
 </template>
 
 <script>
-import axios from "axios";
+import { api } from "@/services.js";
 
 export default {
   data() {
     return {
-      produtos: null
+      produtos: null,
     };
   },
   methods: {
     getProdutos() {
-      axios.get("http://localhost:3000/produto").then(response => {
+      api.get("http://localhost:3000/produto").then(response => {
         this.produtos = response.data;
         });
 
-     fetch("http://localhost:3000/produto")
+     fetch("/produto")
       .then(response => response.json())
        .then(response => {
          this.produtos = response;
