@@ -11,22 +11,19 @@
 
 <script>
 import { api } from "@/services.js";
+import { serialize } from "@/helpers.js";
 
 export default {
   data() {
     return {
       produtos: null,
+      produtosPorPagina: 9,
     };
   },
   computed: {
     url() {
-      let queryString = "";
-      for (let key in this.$route.query) {
-        queryString += `&${key}=${this.$route.query[key]}`;
-      }
-      console.log(queryString);
-
-      return "/produto?_limit=10" + queryString;
+      const query = serialize(this.$route.query);
+      return `/produto?_limit=${this.produtosPorPagina}${query}`;
     }  
   },
   methods: {
