@@ -18,17 +18,27 @@ export default {
       produtos: null,
     };
   },
+  computed: {
+    url() {
+      let queryString = "";
+      for (let key in this.$route.query) {
+        queryString += `&${key}=${this.$route.query[key]}`;
+      }
+      console.log(queryString);
+
+      return "/produto?_limit=10" + queryString;
+    }  
+  },
   methods: {
     getProdutos() {
-      api.get("http://localhost:3000/produto").then(response => {
+      api.get(this.url).then(response => {
         this.produtos = response.data;
-        });
-
-     fetch("/produto")
-      .then(response => response.json())
-       .then(response => {
-         this.produtos = response;
-       });
+      });
+    }
+  },
+  watch: {
+    url() {
+      this.getProdutos();
     }
   },
   created() {
