@@ -11,7 +11,7 @@
       </div>
     </div>
     <div v-else-if="produtos && produtos.length == 0">
-      <p>Busca sem resultados. Tente buscar por outro.</p>
+      <p class="sem-resultados">Busca sem resultados. Tente buscar por outro.</p>
     </div>
   </section>
 </template>
@@ -70,4 +70,31 @@ export default {
     grid-gap: 30px;
     margin: 30px;
   }
+
+  .produto:hover {
+    box-shadow: 0 6px 12px rgba(30, 60, 90, 0.2);
+    transform: scale(1.1);
+    position: relative;
+    z-index: 1;
+  }
+
+  .produto img {
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+
+  .titulo {
+    margin-bottom: 10px;
+  }
+
+  .preco {
+    color: #e80;
+    font-weight: bold;
+  }
+
+  .sem-resultados {
+    text-align: center;
+  }
+
+
 </style>
