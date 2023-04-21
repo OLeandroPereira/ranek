@@ -14,6 +14,9 @@
     <div v-else-if="produtos && produtos.length == 0">
       <p class="sem-resultados">Busca sem resultados. Tente buscar por outro.</p>
     </div>
+    <div v-else>
+      <PaginaCarregando />
+    </div>
   </section>
 </template>
 
@@ -30,7 +33,7 @@ export default {
   data() {
     return {
       produtos: null,
-      produtosPorPagina: 3,
+      produtosPorPagina: 9,
       produtosTotal: 0
     };
   },
@@ -42,10 +45,14 @@ export default {
   },
   methods: {
     getProdutos() {
-      api.get(this.url).then(response => {
-        this.produtosTotal = Number(response.headers["x-total-count"]);
-        this.produtos = response.data;
-      });
+      this.produtos = null;
+      window.setTimeout(() => {
+        api.get(this.url).then(response => {
+          this.produtosTotal = Number(response.headers["x-total-count"]);
+          this.produtos = response.data;
+        });  
+      }, 1500)
+      
     }
   },
   watch: {
