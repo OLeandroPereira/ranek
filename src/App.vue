@@ -101,4 +101,14 @@ textarea:hover {
   border-color: #87f;
 }
 
+.v-enter, 
+.v-leave-to {
+  opacity: 0;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.3s;
+}
+
 </style>
