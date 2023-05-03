@@ -22,14 +22,14 @@
     <transition mode="out-in">
       <router-view></router-view>
     </transition>
-    <p>Página do Usuário: {{ $store.state.usuario }}</p>
+    <p>Página do usuário {{ $store.state.usuario }}</p>
   </section>
 </template>
 
 <script>
 export default {
   name: "UsuarioView"
-}
+};
 </script>
 
 <style>
