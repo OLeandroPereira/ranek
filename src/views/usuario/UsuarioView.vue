@@ -3,19 +3,19 @@
     <nav class="sidenav">
       <ul>
         <li>
-          <router-link to="/">Produtos</router-link>
+          <router-link to="{ name: 'usuario' }">Produtos</router-link>
         </li>
         <li>
-          <router-link to="/">Compras</router-link>
+          <router-link to="{ name: 'compras' }">Compras</router-link>
         </li>
         <li>
-          <router-link to="/">Vendas</router-link>
+          <router-link to="{ name: vendas }">Vendas</router-link>
         </li>
         <li>
-          <router-link to="/">Editar Usuário</router-link>
+          <router-link to="{ name: usuario-editar }">Editar Usuário</router-link>
         </li>
         <li>
-          <router-link to="/">Deslogar</router-link>
+          <button @click.prevent="deslogar">Deslogar</button>
         </li>
       </ul>        
     </nav>
