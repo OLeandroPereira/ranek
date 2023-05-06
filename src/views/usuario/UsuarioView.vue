@@ -28,12 +28,15 @@
 
 <script>
 export default {
-  name: "UsuarioView"
+  name: "UsuarioView",
+  methods: {
+    deslogar() {
+      this.$store.dispatch("deslogarUsuario");
+      this.$router.push("/login");
+    }
+  }
 };
 </script>
 
 <style>
-  section {
-    
-  }
 </style>
