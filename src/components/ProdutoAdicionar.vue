@@ -1,16 +1,9 @@
 <template>
-  <section>
-    <h2>Adicionar Produto</h2>
-    <UsuarioProduto />
-  </section>
+    <p>Produto Adicionar</p>
 </template>  
 
   <script>
-    import ProdutoAdicionar from '@/components/ProdutoAdicionar.vue';
-    export default {
-      name: 'ProdutoAdicionar',
-      component: {
-        UsuarioProduto
-      }
-    };
+  export default {
+
+  }
   </script>
