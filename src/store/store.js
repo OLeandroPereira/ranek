@@ -1,7 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import { api } from "@/services.js";
-
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -53,7 +52,7 @@ export default new Vuex.Store({
       return api.post("/usuario", payload);
     }
   },
-  deslogarUsuarios(context) {
+  deslogarUsuario(context) {
     context.commit("UPDATE_USUARIO", {
       id: "",
       nome: "",
