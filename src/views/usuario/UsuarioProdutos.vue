@@ -47,4 +47,6 @@ export default {
 h2 {
   margin-bottom: 20px;
 }
+
+
 </style>
