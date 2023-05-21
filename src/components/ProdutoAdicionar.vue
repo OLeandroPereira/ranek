@@ -1,6 +1,6 @@
 <template>
   <form class="adicionar-produto">
-    <label for="name">Nome</label>
+    <label for="nome">Nome</label>
     <input id="nome" name="nome" type="text" v-model="produto.nome">
     <label for="preco">Preço (R$)</label>
     <input id="preco" name="preco" type="number" v-model="produto.preco">
@@ -34,7 +34,7 @@ export default {
       adicionarProduto() {
         this.formatarProduto();
         api.post("/produto", this.produto).then(() => {
-          this.$store.dispatch("getUsuarioProduto");
+          this.$store.dispatch("getUsuarioProdutos");
         });
       }
     }

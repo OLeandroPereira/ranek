@@ -24,7 +24,7 @@ export default {
 .produto {
   display: grid;
   grid-template-columns: minmax(100px, 200px) 1fr;
-  grid-gap: 20x;
+  grid-gap: 20px;
   margin-bottom: 40px;
   position: relative;
 }

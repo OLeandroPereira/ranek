@@ -26,7 +26,7 @@
 
 <script>
 import { mapFields } from "@/helpers.js"; 
-import { getCep } from "@/services.js"
+import { getCep } from "@/services.js";
 
 export default {
   computed: {
@@ -34,7 +34,7 @@ export default {
       fields: ["nome", "email", "senha", "password", "rua", "cep", "numero", "bairro", "cidade", "estado"],
       base: "usuario",
       mutation: "UPDATE_USUARIO"
-    }),
+    })
   },
   methods: {
     preencherCep() {

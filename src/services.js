@@ -10,7 +10,7 @@ export const api = {
     return axiosInstance.get(endpoint);
   },
   post(endpoint, body) {
-    return axiosInstance.get(endpoint, body);
+    return axiosInstance.post(endpoint, body);
   },
   put(endpoint, body) {
     return axiosInstance.put(endpoint, body);
@@ -21,5 +21,5 @@ export const api = {
 };
 
 export function getCep(cep) {
-  return axios.get(`https://viacep.com.br/ws/${cep}/json`);
+  return axios.get(`https://viacep.com.br/ws/${cep}/json/`);
 }
