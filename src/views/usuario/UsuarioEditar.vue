@@ -8,11 +8,18 @@
 
 <script>
 import UsuarioForm from "@/components/UsuarioForm.vue";
+import { api } from "@/services.js";
 
 export default {
   name: "UsuarioEditar",
   components: {
     UsuarioForm
+  },
+  methods: {
+    atualizarUsuario() {
+      api.put
+    }
+    
   }
 };
 </script>
