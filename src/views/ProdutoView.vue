@@ -10,10 +10,10 @@
         <h1>{{ produto.nome }}</h1>
         <p class="preco">{{ produto.preco | numeroPreco}}</p>
         <p class="descricao">{{ produto.descricao }}</p>
-        <transition v-if="produto.vendido == 'false'""
-        <button class="btn" v-if=""!finalizar""">Comprar</button>
-        <Finalizar-compra />
-        <transition />
+        <transition v-if="produto.vendido == 'false'">
+          <button class="btn" v-if="!finalizar">Comprar</button>
+          <Finalizar-compra v-else :produto="produto"/>
+        </transition>
         <button v-else class="btn" disabled>Produto Vendido</button>
       </div>
     </div>
@@ -32,7 +32,8 @@ export default {
   props: ["id"],
   data() {
     return {
-      produto: null
+      produto: null,
+      finalizar: false,
     };
   },
   methods: {
