@@ -10,8 +10,9 @@
         <h1>{{ produto.nome }}</h1>
         <p class="preco">{{ produto.preco | numeroPreco}}</p>
         <p class="descricao">{{ produto.descricao }}</p>
-        <transition v-if="produto.vendido == 'false'">
-          <button class="btn" v-if="!finalizar">Comprar</button>
+        <transition mode="out-in" v-if="produto.vendido == 'false'">
+          <button class="btn" v-if="!finalizar" @click="finalizar = true
+          ">Comprar</button>
           <Finalizar-compra v-else :produto="produto"/>
         </transition>
         <button v-else class="btn" disabled>Produto Vendido</button>
